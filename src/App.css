@@ -1,0 +1,49 @@
+
+.App {
+  margin: 0 0;
+  padding: 0;
+  background-color: antiquewhite;
+  
+  height: '100vh'
+}
+
+.mainsegment{
+  margin: 0 !important;
+  padding: 0 !important;
+  
+  
+  height: 100vh
+}
+.content {
+  margin: 5% 10%;
+}
+
+.login-form {
+  width: 15rem;
+  margin: 100px auto;
+}
+
+.new-course-form {
+  margin: 5% 10%;
+}
+
+.comment {
+  margin-bottom: 10px;
+}
+
+.course-page {
+  margin: 5% 10%;
+}
+
+.navbar {
+  background-color: rgb(235, 145, 163);
+  padding: 5px 0px;
+}
+
+@media only screen and (min-width: 768px) {
+  /* For desktop: */
+  .navbar {
+    background-color: rgb(235, 145, 163);
+    padding: 5px 50px;
+  }
+}
