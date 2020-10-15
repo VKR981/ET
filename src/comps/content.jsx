@@ -44,23 +44,20 @@ export default function Content() {
   
 
   const [currentDateStart, setNewStartDate] = useState(new Date(new Date()-2.592e+9));
-  const onChangeStart = (event, data) => {setNewStartDate(data.value); setFilteredList(expenses.filter((e)=>(data.value<=new Date(e.date_added)&&currentDateEnd>=new Date(e.date_added))))}
+  const onChangeStart = (event, data) => {setNewStartDate(data.value); setFilteredList(expenses.filter((e)=>(data.value<=new Date(e.date_added)&&(currentDateEnd.getTime()+8.64e+7)>=new Date(e.date_added).getTime())))}
 
   const [currentDateEnd, setNewEndDate] = useState(new Date());
-  const onChangeEnd = (event, data) => {setNewEndDate(data.value); setFilteredList(expenses.filter((e)=>(currentDateStart<=new Date(e.date_added)&&data.value>=new Date(e.date_added))))}
+  const onChangeEnd = (event, data) => {setNewEndDate(data.value); setFilteredList(expenses.filter((e)=>(currentDateStart<=new Date(e.date_added)&&(data.value.getTime()+8.64e+7)>=new Date(e.date_added).getTime())))}
 
 
   useEffect(() => {
-    setFilteredList(expenses.filter((e)=>(currentDateStart<=new Date(e.date_added)&&currentDateEnd>=new Date(e.date_added))))
+    setFilteredList(expenses.filter((e)=>(currentDateStart<=new Date(e.date_added)&&(currentDateEnd.getTime()+8.64e+7)>=(new Date(e.date_added)).getTime())))
     
-    console.log(expenses);
+    
     
   }, [expenses])
 
-  useEffect(() => {
-    
-  }, [filteredList])
-
+  
   useEffect(() => {
     if (token){
     dispatch(getexpenses())
